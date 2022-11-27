@@ -73,8 +73,8 @@ public class Lambda02 {
 
     public static void maxBul(List<Integer> sayi) {
         Optional<Integer> maxSayi = sayi.//eger ifadem sol tarafa deger atayacaksa ve null olma ihtimali varsa optinal ile exceptin handle edilir
-                stream().
-                reduce(Math::max);//terminal opretorudur,arkasindan foreach gelmez
+                                  stream().
+                                  reduce(Math::max);//terminal opretorudur,arkasindan foreach gelmez
         System.out.println(maxSayi);//Optional[15]
         //eger benim resultim tek bir deger ise o zaman reduce terminal opr.kullanilir
     }//Integer degere null atanirsa nullpointerexceptions alinir,Java8de Optional geldi ve bu exceptions sorunu cozuldu
@@ -95,18 +95,27 @@ public class Lambda02 {
 
     public static void ciftKareMaxPrint(List<Integer> sayi) {
         //bir degiskene atayacaksak Optional`e cast etmek gerekiyor.
-        Optional<Integer> ciftKaremax = sayi.stream().filter(Lambda01::ciftBul).map(t -> t * t).reduce(Integer::max);
-//        System.out.println(ciftKaremax);//Optional[36]
+        Optional<Integer> ciftKaremax = sayi.
+                stream().
+                filter(Lambda01::ciftBul).
+                map(t -> t * t).
+                reduce(Integer::max);
+       System.out.println(ciftKaremax);//Optional[36]
         //yada
-        System.out.println(sayi.stream().filter(Lambda01::ciftBul).map(t -> t * t).reduce(Integer::max)); //seklinde de yazdirabilirdik
-//Integer::max methodu , Math:: max`a gore daha hizli calistigindan  Integer yazdik
+        System.out.println(sayi.
+                stream().
+                filter(Lambda01::ciftBul).
+                map(t -> t * t).reduce(Integer::max)); //seklinde de yazdirabilirdik
+//Integer::max methodu , Math::max`a gore daha hizli calistigindan  Integer yazdik
 
     }
 
 
     // Task-6: List'teki tum elemanlarin toplamini yazdiriniz.Lambda Expression...
     public static void elTopla(List<Integer> sayi) {
-        int topla = sayi.stream().reduce(0, (a, b) -> a + b);
+        int topla = sayi.
+                stream().
+                reduce(0, (a, b) -> a + b);
         //toplamadaki etkisiz eleman sifiri yazdik ve akistan gelen iki sayiyi topla dedik
         System.out.println("topla = " + topla);//topla = 43
 /*
@@ -126,7 +135,9 @@ public class Lambda02 {
                 reduce(Math::multiplyExact));//Optional[48]
 
         //optional olmayan sekilde yazalim, bu lambda expression dir daha mantikli cozum olur.
-        System.out.println(sayi.stream().filter(Lambda01::ciftBul)
+        System.out.println(sayi.
+                stream().
+                filter(Lambda01::ciftBul)
                 .reduce(1, (a, b) -> (a * b)));// herhalukarda icinde 1 var nulpointer gelmez->> 48geldi
     }
 
@@ -150,12 +161,9 @@ public class Lambda02 {
 
 
   /*
-  Hocam soyle ozetlersek dogru olur mu:
 eger biz ilave birseyler yazmadan  hazir java methodlarindan cagiriyor isek "Method  reference" ;
 biz ilave biseyler yaziyor isek "lambda expression"  oluyor.
    */
-
-
 
     // Task-9 : List'teki 5'ten buyuk en kucuk tek sayiyi print ediniz.
     public static void bestenBykEnKucuk(List<Integer> sayi){
@@ -167,7 +175,7 @@ biz ilave biseyler yaziyor isek "lambda expression"  oluyor.
     }
 
     // Task-10 : list'in cift  elemanlarinin karelerini  kucukten buyuge print ediniz.
-    public static void ciftKareKckByge(List<Integer> sayi){ //reduce kullanamaliyiz cunku ciktida birden cok sayi olacak
+    public static void ciftKareKckByge(List<Integer> sayi){ //reduce kullanamayiz cunku ciktida birden cok sayi olacak
        sayi.stream().
                filter(Lambda01::ciftBul).//ciftsayilari aldik
                map(t->t*t).//sayilarin karesini aldik,akisi devam ettirdik
