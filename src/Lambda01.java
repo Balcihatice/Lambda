@@ -36,7 +36,7 @@ public class Lambda01 {
         printElFunctional(sayi);
     }
 
-    //TASK  : "Structured Programming" kullanarak list elemanlarını aynı satirda
+    //TASK 1 : "Structured Programming" kullanarak list elemanlarını aynı satirda
     // aralarında bosluk olacak sekilde print ediniz.
     public static void printElStructured(List<Integer> sayi) {
         for (Integer w : sayi) {
@@ -45,7 +45,7 @@ public class Lambda01 {
 
     }
 
-    //TASK  : "functional Programming" kullanarak list elemanlarını aynı satirda
+    //TASK 1- 2.Yol : "functional Programming" kullanarak list elemanlarını aynı satirda
     // aralarında bosluk olacak sekilde print ediniz.
     public static void printElFunctional(List<Integer> sayi) {
         //Elimizde collections yapi olmali
@@ -72,7 +72,7 @@ public class Lambda01 {
                 forEach(Lambda01::yazdir); //method referance
 
     }
-//TASK  : functional Programming ile list elemanlarinin  cift olanlarini
+//TASK 2 : functional Programming ile list elemanlarinin  cift olanlarini
 // ayni satirda aralarina bosluk birakarak print ediniz.
 
 
@@ -97,7 +97,7 @@ public class Lambda01 {
     //if yerine filter() kullandik
 
 
-//TASK  : structural Programming ile list elemanlarinin  cift olanlarini
+//TASK 2--->>> 2.Yol: structural Programming ile list elemanlarinin  cift olanlarini
 // ayni satirda aralarina bosluk birakarak print ediniz.
 
     public static void printCiftElStructured(List<Integer> sayi) {
@@ -108,7 +108,7 @@ public class Lambda01 {
         }
     }
 
-////TASK :functional Programming ile list elemanlarinin 34 den kucuk
+////TASK 3 :functional Programming ile list elemanlarinin 34 den kucuk
 // cift olanlarini ayni satirda aralarina bosluk birakarak print ediniz.
 
     public static void printCiftOtuzFunctional(List<Integer> sayi) {
