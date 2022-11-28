@@ -61,6 +61,7 @@ public class Lambda03 {
     //allMatch() --> tum  elemanlar sarti saglarsa true en az bir eleman sarti saglamazsa false return eder.
     //noneMatch()--> hic bir sarti SAGLAMAZSA true en az bir eleman sarti SAGLARSA false return eder.
     // Task-4 : List elemanlarinin hepsinin karakter sayisinin 7 ve 7 'den az olma durumunu kontrol ediniz.
+
     public static void harfSayisi7denAzKontrol(List<String> ikram) {
         System.out.println(ikram.
                 stream().
