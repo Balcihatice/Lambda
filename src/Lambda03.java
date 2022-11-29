@@ -78,6 +78,7 @@ public class Lambda03 {
     }
 
     // Task-6 : List elelmanlarinin "x" ile biten en az bir elemanı var mı kontrol ediniz.
+
     public static void xIleBitenElKontrol(List<String> ikram) {
         System.out.println(ikram.
                 stream().
